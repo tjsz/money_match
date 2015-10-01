@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'simple_form'
 gem 'font-awesome-sass', '~> 4.4.0'
+gem 'devise'
 
 #Other
 gem 'turbolinks'
