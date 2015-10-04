@@ -48,3 +48,7 @@ class ProjectsController < ApplicationController
 end
 end
 end
+
+#DonorsChoose.api_key="DONORSCHOOSE"
+#DonorChoose::Project.by_zip(94117)
+#projects.first.title
