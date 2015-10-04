@@ -8,15 +8,16 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @projects = Project.new(project_params)
+    @project = Project.new(project_params)
     if @project.save
-      redirect_to project_path
+      redirect_to project_path(@project)
     else
       render "new"
+    end
   end
 
   def edit
-    @projects = get_project
+    @project = get_project
   end
 
   def update
@@ -29,24 +30,24 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @projects = get_project
+    @project = get_project
   end
 
   def destroy
     @projects = get_project
     @projects.destroy
-    redirect_to_project_path
+    redirect_to projects_path
+  end
 
   private
+  
   def get_project
     Project.find(params[:id])
   end
 
   def project_params
-   params.require(:project).permit(:title, :short_discription)
+   params.require(:project).permit(:title, :short_discription, :grade_level, :expiration_date)
   end
-end
-end
 end
 
 #DonorsChoose.api_key="DONORSCHOOSE"

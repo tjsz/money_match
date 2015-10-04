@@ -1,9 +1,21 @@
 <h1>Projects</h1>
 
-<% @projects.each do |project| %>
-<ul><%= project.title %> </ul>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.title %></td>
+      <td><%= link_to 'Show', project_path(project) %></td>
+      <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    </tr>
+  <% end %>
+</table>
 
 
-<% end %>
 
 
