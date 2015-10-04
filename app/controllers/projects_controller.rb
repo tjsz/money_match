@@ -1,6 +1,10 @@
+require 'donors_choose'
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    #@projects = Project.all
+    DonorsChoose.api_key="DONORSCHOOSE"
+    @projects = DonorsChoose::Project.by_zip(params[:zip_code])
+    #projects.first.title
   end
 
   def new
@@ -30,7 +34,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = get_project
+    DonorsChoose.api_key="DONORSCHOOSE"
+    @projects = DonorsChoose::Project.by_zip(params[:zip_code])
+    #projects.first.title
   end
 
   def destroy
@@ -43,6 +49,7 @@ class ProjectsController < ApplicationController
   
   def get_project
     Project.find(params[:id])
+    
   end
 
   def project_params

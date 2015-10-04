@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   #get 'static_pages/home'
 
   #get 'static_pages/test'
-  resources :projects
+  resources :projects do
+
+  end
+
   root "static_pages#home"
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
