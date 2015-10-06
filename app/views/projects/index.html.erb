@@ -1,26 +1,29 @@
-<h1>Projects</h1>
+<center><h1>Got a Few Bucks? Fund a School Project!</h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="2"></th>
+    <th>Project Name</th>
+    <th>Website</th>
+    <th colspan="10"></th>
   </tr>
 
 
   <% @projects.each do |project| %>
     <tr>
       <td><%= project.title %></td>
-      <td><%= link_to 'Show', project.fundURL %></td>
-      <td><%= link_to 'Edit', edit_project_path(project) %></td>
+      <td><%= link_to 'Get More Info', project.fundURL %></td>
+  
     </tr>
   <% end %>
 </table>
 
 
- <%= form_tag('/projects', method: :get) do %>
- <%= text_field_tag "zip_code", "Enter zip code"%>
- <div><%= submit_tag 'Get Started',class: 'btn btn-lg btn-warning'%></div> 
-<% end -%>
+ <p><%= form_tag('/projects', method: :get) do %></p>
+
+ <p><%= text_field_tag "zip_code", "Enter zip code"%></p>
+
+ <div><%= submit_tag 'Get Started', class: 'btn btn-lg btn-warning'%></div> 
+
+<% end -%></center>
 
 
